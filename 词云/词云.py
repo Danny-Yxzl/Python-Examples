@@ -36,7 +36,7 @@ def draw_wordcloud(text,
     wc.to_file(save_path)  #按照设置的像素宽高度保存绘制好的词云图，比下面程序显示更清晰
 
 
-draw_wordcloud(text, repeat=True)
+draw_wordcloud(text, repeat=Truez)
 
 
 """# 4、显示图片
