@@ -10,8 +10,8 @@ from icecream import ic
 SESSDATA = BILI_JCT = BUVID3 = ""
 
 FFMPEG_PATH = "D:/ffmpeg/bin/ffmpeg.exe"
-PATH = "E:/Desktop/cpp/"
-BV = "BV1K54y147Rd"
+PATH = "E:/Desktop/py/"
+BV = "BV1c4411e77t"
 NAME = ""
 
 cnt = 1
@@ -61,14 +61,14 @@ async def main(p=0):
         # 混流
         # print('混流中')
         os.system(
-            f'{FFMPEG_PATH} -i video_temp_{p}.m4s -i audio_temp_{p}.m4s -vcodec copy -acodec copy {PATH}/{video_name}.mp4'
+            f'{FFMPEG_PATH} -i video_temp_{p}.m4s -i audio_temp_{p}.m4s -vcodec copy -acodec copy {PATH}/{p+1}_{video_name}.mp4'
         )
 
         # 删除临时文件
         os.remove(f"video_temp_{p}.m4s")
         os.remove(f"audio_temp_{p}.m4s")
 
-        print(f'已下载为：{video_name}.mp4')
+        print(f'已下载为：{p+1}_{video_name}.mp4')
 
 
 if __name__ == '__main__':
@@ -79,4 +79,4 @@ if __name__ == '__main__':
             i += 1
         except:
             break
-    print(f"总计视频数量为{i}")
+    print(f"\n\n总计视频数量为{i}")
